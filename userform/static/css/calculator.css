@@ -1,0 +1,76 @@
+/* Custom calculator styles on top of Bootstrap */
+
+.calculator-card {
+  border-radius: 12px;
+  padding: 0;
+  overflow: hidden;
+  transform: translateY(0);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.calculator-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.result-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+}
+
+.op-btn {
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.op-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(59,130,246,0.12);
+}
+
+.op-btn:active {
+  transform: translateY(0);
+}
+
+/* Make the primary button slightly more prominent */
+.btn-primary {
+  border-radius: 8px;
+}
+.btn-outline-primary {
+  border-radius: 8px;
+}
+
+/* Result typography */
+#result {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Loading indicator spacing */
+#loading-indicator {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .calculator-card { margin: 0 1rem; }
+  .btn-group .btn { font-size: 0.95rem; padding: 0.65rem 0.5rem; }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+  .calculator-card { max-width: 720px; }
+}
+
+/* Accessibility focus states */
+.op-btn:focus {
+  outline: 3px solid rgba(59,130,246,0.18);
+  outline-offset: 2px;
+}
+
+/* Alert placeholder spacing */
+#alert-placeholder .alert {
+  margin-bottom: 0;
+}

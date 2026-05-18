@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Calculator{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+  <div class="card calculator-card shadow-sm w-100" style="max-width: 680px;">
+    <div class="card-body">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h2 class="card-title mb-0">Calculator</h2>
+        <small class="text-muted">Simple arithmetic</small>
+      </div>
+
+      <form id="calculator-form" class="row g-3" novalidate>
+        {% csrf_token %}
+        <div class="col-12 col-md-6">
+          <div class="form-floating">
+            <input type="number" step="any" class="form-control" id="input-a" name="a" placeholder="Number A" required aria-label="Number A">
+            <label for="input-a">Number A</label>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="form-floating">
+            <input type="number" step="any" class="form-control" id="input-b" name="b" placeholder="Number B" required aria-label="Number B">
+            <label for="input-b">Number B</label>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div id="alert-placeholder" aria-live="polite"></div>
+        </div>
+
+        <div class="col-12 d-flex flex-column flex-sm-row align-items-stretch gap-2">
+          <div class="btn-group w-100" role="group" aria-label="Calculator operations">
+            <button type="button" class="btn btn-primary flex-fill op-btn" data-op="add">Add</button>
+            <button type="button" class="btn btn-outline-primary flex-fill op-btn" data-op="subtract">Subtract</button>
+            <button type="button" class="btn btn-outline-primary flex-fill op-btn" data-op="multiply">Multiply</button>
+            <button type="button" class="btn btn-outline-primary flex-fill op-btn" data-op="divide">Divide</button>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card result-card mt-3 p-3">
+            <div class="d-flex align-items-center justify-content-between">
+              <div>
+                <small class="text-muted">Result</small>
+                <div id="result" class="h2 mb-0 mt-1" aria-live="polite" aria-atomic="true">—</div>
+              </div>
+
+              <div class="text-end">
+                <div id="loading-indicator" class="spinner-border text-primary d-none" role="status" aria-hidden="true" aria-live="polite"></div>
+                <small id="status-text" class="text-muted d-block mt-1" aria-hidden="true"></small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script src="{% static 'js/calculator.js' %}"></script>
+{% endblock %}
