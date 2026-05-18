@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Django App{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/variables.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+    <div class="site-wrapper">
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="/" class="brand">My Django Form</a>
+                <nav class="nav">
+                    <a href="/" class="nav__link">Form</a>
+                    <a href="/success/" class="nav__link">Success</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container main-content" role="main">
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="site-footer" role="contentinfo">
+            <div class="container footer-inner">
+                <p>&copy; {{ now|date:"Y" }} My Django Form. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    {% block extra_js %}
+    <script src="{% static 'js/main.js' %}"></script>
+    {% endblock %}
+</body>
+</html>
