@@ -1,0 +1,43 @@
+/* variables.css - design tokens */
+:root {
+  /* Colors */
+  --color-bg: #f7fafc;
+  --color-surface: #ffffff;
+  --color-muted: #edf2f7;
+  --color-text: #1a202c;
+  --color-primary: #2563eb;
+  --color-primary-600: #1e40af;
+  --color-accent: #06b6d4;
+  --color-danger: #ef4444;
+
+  /* Typography */
+  --font-family-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+  --h1-size: 2rem; /*32px*/
+  --h2-size: 1.5rem; /*24px*/
+  --h3-size: 1.125rem; /*18px*/
+
+  /* Spacing */
+  --space-1: 0.25rem; /*4px*/
+  --space-2: 0.5rem;  /*8px*/
+  --space-3: 0.75rem; /*12px*/
+  --space-4: 1rem;    /*16px*/
+  --space-6: 1.5rem;  /*24px*/
+  --space-8: 2rem;    /*32px*/
+
+  /* Breakpoints */
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+
+  /* Motion */
+  --motion-fast: 150ms;
+  --motion-base: 250ms;
+  --motion-ease: cubic-bezier(.4,0,.2,1);
+
+  /* Radius & shadows */
+  --radius-sm: 6px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+}
